@@ -58,19 +58,32 @@ class ChessGame:
                 count = 0
         return out
     def play(self) -> chess.Outcome:
+        steps = 0;
         while True:
             move = self.white_player.move(self.board)
+            steps = steps + 1
+            clear_screen()
             self.board.push(move)
-            clear_screen() 
+            print('white move', move)
             print(self)
             if self.board.is_game_over():
+                print('steps= ', steps)
                 return self.board.outcome()
+
+            # a = input("continue?")
+            # clear_screen()
         
             move = self.black_player.move(self.board)
+            steps = steps + 1
             self.board.push(move)
-            clear_screen() 
+            clear_screen()
+            print('black move', move)
             print(self)
             if self.board.is_game_over():
+                print('steps= ', steps)
                 return self.board.outcome()
+
+            # a = input("continue?")
+            # clear_screen()
 
 

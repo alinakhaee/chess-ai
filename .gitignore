@@ -1,3 +1,4 @@
-__pycache__/*
-tiredKnight/*
+__pycache__/
+tiredKnight/
 chess/
+.idea/
